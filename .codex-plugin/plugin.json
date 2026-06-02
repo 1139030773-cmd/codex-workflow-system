@@ -1,9 +1,9 @@
 {
   "name": "codex-workflow-system",
   "version": "1.0.0",
-  "description": "A Chinese beginner-friendly Codex workflow system for project control, learning, debugging, drift audits, and phase closeout.",
+  "description": "一套面向中文新手的 Codex 工作流系统，用于项目总控、学习引导、调试修复、漂移审计和阶段收尾。",
   "author": {
-    "name": "Codex Workflow System"
+    "name": "Codex 工作流系统"
   },
   "license": "MIT",
   "homepage": "https://github.com/1139030773-cmd/codex-workflow-system",
@@ -20,8 +20,8 @@
   "interface": {
     "displayName": "Codex 工作流系统",
     "shortDescription": "给新手用的中文项目、学习、调试和收尾引导系统。",
-    "longDescription": "一套中文 Codex 工作流插件，包含新手引导、项目总控、学习教练、调试修复、漂移审计和阶段收尾等 skill，帮助用户从模糊想法自然进入可执行任务。",
-    "developerName": "Codex Workflow System",
+    "longDescription": "一套中文 Codex 工作流插件，包含新手引导、项目总控、学习教练、调试修复、漂移审计和阶段收尾等技能，帮助用户从模糊想法自然进入可执行任务。",
+    "developerName": "Codex 工作流系统",
     "category": "Productivity",
     "capabilities": [
       "Interactive",
