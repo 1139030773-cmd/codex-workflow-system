@@ -7,7 +7,7 @@
 **项目名称**: Codex Workflow System  
 **项目类型**: GitHub Copilot Extensions/Skills  
 **开源协议**: MIT License  
-**仓库**: https://github.com/1139030773-cmd/codex-workflow-system
+**仓库**: https://github.com/1139030773-cmd/agent-workflow-system
 
 ## 项目描述
 
@@ -15,28 +15,28 @@
 
 ## 包含的 Skills
 
-### 1. codex-newbie-guide (新手引导)
+### 1. agent-newbie-guide (新手引导)
 - **描述**: 新手引导入口
 - **功能**: 帮助新手将模糊目标逐步转化为具体任务
 - **推荐用语**: "启动新手引导。我有一个模糊目标，请你一步一步问我，并把它变成可执行任务。"
 
-### 2. codex-project-master (项目总控)
+### 2. agent-project-master (项目总控)
 - **描述**: 项目全局管理和进度跟踪
 - **功能**: 项目规划、进度监控、资源分配
 
-### 3. codex-learning-coach (学习教练)
+### 3. agent-learning-coach (学习教练)
 - **描述**: 个性化学习指导
 - **功能**: 学习路径规划、个性化教学、进度评估
 
-### 4. codex-debug-fixer (调试修复)
+### 4. agent-debug-fixer (调试修复)
 - **描述**: 代码问题诊断和修复
 - **功能**: 错误诊断、根因分析、代码修复
 
-### 5. codex-drift-auditor (漂移检查)
+### 5. agent-drift-auditor (漂移检查)
 - **描述**: 项目偏离检查和审计
 - **功能**: 目标偏离检测、质量审计、风险提示
 
-### 6. codex-phase-closeout (阶段收尾)
+### 6. agent-phase-closeout (阶段收尾)
 - **描述**: 项目阶段总结
 - **功能**: 阶段总结、经验沉淀、下阶段规划
 
@@ -55,10 +55,10 @@
 
 ```bash
 # 全局安装
-npx codex-marketplace add 1139030773-cmd/codex-workflow-system --plugin --global
+npx agent-marketplace add 1139030773-cmd/agent-workflow-system --plugin --global
 
 # 项目级安装
-npx codex-marketplace add 1139030773-cmd/codex-workflow-system --plugin --project
+npx agent-marketplace add 1139030773-cmd/agent-workflow-system --plugin --project
 ```
 
 ## GitHub Marketplace 发布步骤
@@ -85,8 +85,8 @@ npx codex-marketplace add 1139030773-cmd/codex-workflow-system --plugin --projec
 | 简短描述 | 中文 Copilot Skills 工作流系统，助力新手和非技术用户 |
 | 完整描述 | 一套中文 Copilot Skills 工作流插件，面向新手和非技术用户。它把模糊目标引导成可执行任务，并提供项目总控、学习教练、调试修复、漂移审计和阶段收尾能力。 |
 | 应用类别 | Development / Productivity |
-| 应用 URL | https://github.com/1139030773-cmd/codex-workflow-system |
-| 支持 URL | https://github.com/1139030773-cmd/codex-workflow-system/issues |
+| 应用 URL | https://github.com/1139030773-cmd/agent-workflow-system |
+| 支持 URL | https://github.com/1139030773-cmd/agent-workflow-system/issues |
 | 所有者 | 1139030773-cmd |
 
 ### 步骤 4: 配置定价
@@ -137,7 +137,7 @@ npx codex-marketplace add 1139030773-cmd/codex-workflow-system --plugin --projec
 
 - [GitHub Marketplace 文档](https://docs.github.com/en/github-ae@latest/developers/github-marketplace/github-marketplace-overview)
 - [Copilot Extensions 文档](https://github.com/github/copilot-docs)
-- [本仓库的 Issues](https://github.com/1139030773-cmd/codex-workflow-system/issues)
+- [本仓库的 Issues](https://github.com/1139030773-cmd/agent-workflow-system/issues)
 
 ## 许可证
 

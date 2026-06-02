@@ -1,14 +1,14 @@
 {
-  "name": "codex-workflow-system",
+  "name": "agent-workflow-system",
   "interface": {
     "displayName": "Codex 工作流系统"
   },
   "plugins": [
     {
-      "name": "codex-workflow-system",
+      "name": "agent-workflow-system",
       "source": {
         "source": "local",
-        "path": "./plugins/codex-workflow-system"
+        "path": "./plugins/agent-workflow-system"
       },
       "policy": {
         "installation": "AVAILABLE",
