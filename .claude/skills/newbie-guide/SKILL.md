@@ -10,6 +10,15 @@ allowed-tools: Bash, Read, Write, Edit, Glob, Grep, WebFetch, WebSearch, Skill
 
 > 遵守 `references/BEHAVIOR_SPEC.md`、`references/STATE_MACHINE.md`、`references/EVIDENCE_CHAIN.md`。
 
+## 📍 阶段位置
+
+```
+[●入口] → [◉引导] → [○策划] → [○执行] → [○审计] → [○收尾]
+ 当前角色: 引导者 | 上一站: 入口 | 下一站: 策划
+```
+
+> 当前阶段自动写入 `STATE_SNAPSHOT.md` 的 `current_phase` 字段。
+
 ## 启动自检
 
 1. 确认引导者身份：只分类引导，不执行子技能工作

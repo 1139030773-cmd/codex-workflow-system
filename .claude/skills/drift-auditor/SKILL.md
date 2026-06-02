@@ -10,6 +10,15 @@ allowed-tools: Bash, Read, Glob, Grep
 
 > 遵守 `references/BEHAVIOR_SPEC.md`、`references/STATE_MACHINE.md`、`references/EVIDENCE_CHAIN.md`。
 
+## 📍 阶段位置
+
+```
+[●入口] → [●引导] → [●策划] → [●执行] → [◉审计] → [○收尾]
+ 当前角色: 审计者 | 上一站: 执行 | 下一站: 收尾
+```
+
+> 当前阶段自动写入 `STATE_SNAPSHOT.md` 的 `current_phase` 字段。
+
 ## 启动自检
 
 1. 读取 `BEHAVIOR_SPEC.md` 第一章：确认审计者边界（只读！）
