@@ -2,6 +2,27 @@
 
 所有对该项目的重大更改将在此文件中进行记录。
 
+## [1.3.1] - 2026-06-03
+
+### Fixed
+- 🔧 修正 Claude Code 安装命令（mkdir -p 防止目录不存在报错）
+- 🔧 安装方式改为新手友好 — Codex 用 /plugins，Claude Code 一行命令
+
+## [1.3.0] - 2026-06-03
+
+### Added
+- 💬 提问规范 (BEHAVIOR_SPEC.md §9) — 所有提问必须带 2-4 个备选答案
+- 🔍 能力前置检查 (BEHAVIOR_SPEC.md §10) — 执行前确认用户工具能力，不匹配则降级
+- 🚧 扩展审查机制 (BEHAVIOR_SPEC.md §11) — 防止 0 用户时过度扩展，5 级门槛
+- 📝 摩擦记录 (BEHAVIOR_SPEC.md §12) — 使用偏离信号收集，3 次触发审计
+- 📋 发布流水线 (RELEASE_PIPELINE.md) — 确保每次改动送达双平台
+- 📋 使用摩擦记录 (USAGE_FEEDBACK.md) — 首 3 条真实摩擦记录
+
+### Changed
+- 🔧 newbie-guide: 新增能力前置检查步骤（第三步）
+- 🔧 learning-coach: 新增工具能力诊断
+- 🔧 phase-closeout: 新增发布检查清单
+
 ## [1.2.0] - 2026-06-03
 
 ### Added
