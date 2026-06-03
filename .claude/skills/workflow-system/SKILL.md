@@ -39,10 +39,11 @@ allowed-tools: Bash, Read, Write, Edit, Glob, Grep, WebFetch, WebSearch, Skill
 ## 工作流程（带校验）
 
 1. 听取用户描述
-2. 判断任务类型
-3. **校验跳转**：对照 `STATE_MACHINE.md` 合法跳转表
-4. 引导到对应子技能
-5. 记录证据链（`EVIDENCE_CHAIN.md` 模板）
+2. **法律觉察**：检查是否触发 `BEHAVIOR_SPEC.md` §8.2 信号 → 触发则输出提示，等用户确认
+3. 判断任务类型
+4. **校验跳转**：对照 `STATE_MACHINE.md` 合法跳转表
+5. 引导到对应子技能
+6. 记录证据链（`EVIDENCE_CHAIN.md` 模板）
 
 ## 快速分类（带状态机校验）
 
