@@ -14,6 +14,33 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: 校验版本一致性
+        run: |
+          VERSION="${GITHUB_REF#refs/tags/}"
+          VERSION_NUM="${VERSION#v}"
+
+          # 1. marketplace.json 版本是否匹配
+          MKT_VERSION=$(grep -o '"version":"[^"]*"' .github/plugin/marketplace.json | head -1 | cut -d'"' -f4)
+          if [ "$MKT_VERSION" != "$VERSION_NUM" ]; then
+            echo "❌ marketplace.json 版本 ($MKT_VERSION) 与 tag ($VERSION) 不一致！"
+            echo "请更新 .github/plugin/marketplace.json 中所有 version 字段。"
+            exit 1
+          fi
+          echo "✅ marketplace.json: $MKT_VERSION"
+
+          # 2. CHANGELOG.md 是否有当前版本条目
+          if ! grep -q "## \[$VERSION_NUM\]" CHANGELOG.md; then
+            echo "❌ CHANGELOG.md 缺少 [$VERSION_NUM] 条目！"
+            echo "请在 CHANGELOG.md 中添加 ## [$VERSION_NUM] 段落后重试。"
+            exit 1
+          fi
+          echo "✅ CHANGELOG.md: [$VERSION_NUM] 条目存在"
+
+          # 3. RELEASE_CHECKLIST.md 存在
+          if [ ! -f RELEASE_CHECKLIST.md ]; then
+            echo "⚠️ RELEASE_CHECKLIST.md 不存在，建议创建。"
+          fi
+
       - name: 提取 CHANGELOG 对应版本内容
         id: changelog
         run: |
