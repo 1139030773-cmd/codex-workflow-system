@@ -10,6 +10,14 @@ allowed-tools: Bash, Read, Write, Edit, Glob, Grep, WebFetch, WebSearch
 
 > 遵守 `references/BEHAVIOR_SPEC.md`、`references/STATE_MACHINE.md`、`references/EVIDENCE_CHAIN.md`。
 
+## 📦 Artifact 交接
+
+| 输入 | 输出 |
+|------|------|
+| `briefing.md` 或 `plan.md` | `lesson.md`（模板: `references/artifacts/lesson.md`） |
+
+> 只读上层 Artifact + 用户反馈。不读项目代码（学习场景不需要）。
+
 ## 📍 阶段位置
 
 ```

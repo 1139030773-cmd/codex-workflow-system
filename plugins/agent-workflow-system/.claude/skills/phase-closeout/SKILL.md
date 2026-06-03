@@ -10,6 +10,14 @@ allowed-tools: Bash, Read, Write, Edit, Glob, Grep
 
 > 遵守 `references/BEHAVIOR_SPEC.md`、`references/STATE_MACHINE.md`、`references/EVIDENCE_CHAIN.md`。
 
+## 📦 Artifact 交接
+
+| 输入 | 输出 |
+|------|------|
+| 本轮所有 Artifact（briefing / plan / patch / lesson / audit） | 汇总到真相源（PROJECT.md / TASK_QUEUE.md / DECISIONS.md / STATE_SNAPSHOT.md） |
+
+> 只读 Artifact + 现有真相源。不重新读取代码或聊天历史。
+
 ## 📍 阶段位置
 
 ```
@@ -49,14 +57,25 @@ allowed-tools: Bash, Read, Write, Edit, Glob, Grep
 ### 4. 识别新增决策 → 写 DECISIONS.md
 ### 5. 冻结判断（接口/模块/命名）
 
-### 6. 更新真相源
+### 6. 发布检查
+
+对照 `references/RELEASE_PIPELINE.md` 逐条确认：
+
+- [ ] git push main 已完成？
+- [ ] 满足 Release 触发条件？→ 若满足，必须打 tag + 写 Release notes
+- [ ] README 反映最新能力？
+- [ ] 双平台都能搜到并安装？
+
+**缺一条 = 没发布完。** 全部通过后才进入第 7 步。
+
+### 7. 更新真相源
 
 - `STATE_SNAPSHOT.md`：状态 + 已完成 + 问题 + 下一步
 - `TASK_QUEUE.md`：移动已完成 → 设新任务
 - `DECISIONS.md`：汇总证据链 + 新决策
 - `PROJECT.md`：更新目标、阶段、冻结区域
 
-### 7. 生成新对话口令
+### 8. 生成新对话口令
 
 ```text
 这是新对话。请先读取：

@@ -10,6 +10,14 @@ allowed-tools: Bash, Read, Edit, Glob, Grep
 
 > 遵守 `references/BEHAVIOR_SPEC.md`、`references/STATE_MACHINE.md`、`references/EVIDENCE_CHAIN.md`。
 
+## 📦 Artifact 交接
+
+| 输入 | 输出 |
+|------|------|
+| `plan.md` | `patch.md`（模板: `references/artifacts/patch.md`） |
+
+> 只读 plan.md + plan 中指定的文件范围。不读 plan 禁止修改的文件。不重新遍历项目。
+
 ## 📍 阶段位置
 
 ```

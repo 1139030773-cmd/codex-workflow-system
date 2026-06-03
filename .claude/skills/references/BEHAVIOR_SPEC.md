@@ -312,3 +312,49 @@ D. 不太确定 — 你推荐一个最简单的
 | 3-5 | drift-auditor 标记、输出改进建议 |
 | ≥5 | 触发人工介入，向开发者提交改进提案 |
 | 方向完全偏离当前工具定位 | 不处理 → 累积 10 次后评估是否衍生新工具 |
+
+---
+
+## 第十三章：Artifact 交接层
+
+### 13.1 核心原则
+
+技能之间不直接传递完整上下文。每个技能产出结构化 Artifact，下一个技能只读 Artifact + 指定工作文件。不重复读项目全貌。
+
+### 13.2 Artifact 链
+
+```
+newbie-guide → briefing.md
+                  ↓
+project-master → plan.md
+                  ↓
+debug-fixer → patch.md      learning-coach → lesson.md
+       ↓                           ↓
+drift-auditor → audit.md ←────────┘
+       ↓
+phase-closeout → 汇总到真相源
+```
+
+### 13.3 硬约束
+
+1. 每个技能启动时先读上层 Artifact，再决定需要哪些代码文件
+2. 禁止重新读取整个项目或全部上下文
+3. Artifact 内容必须是结构化信息（参见 `references/artifacts/`），不是聊天记录摘抄
+4. 若上层 Artifact 缺失 → 请求上层技能补产，不要自己补
+5. Artifact 是交接文档，不是聊天替代品。对话已存在的共识不重复写入
+
+### 13.4 Artifact 模板
+
+参见 `references/artifacts/` 目录：
+
+| 模板 | 产出者 | 接收者 |
+|------|------|------|
+| `briefing.md` | newbie-guide | project-master / learning-coach |
+| `plan.md` | project-master | debug-fixer / learning-coach |
+| `patch.md` | debug-fixer | drift-auditor / phase-closeout |
+| `lesson.md` | learning-coach | drift-auditor / 用户 |
+| `audit.md` | drift-auditor | phase-closeout / project-master |
+
+### 13.5 效果
+
+同一份项目信息不再被多个技能重复读取。50k 上下文 → 5k Artifact → 下一个技能从 5k 启动。

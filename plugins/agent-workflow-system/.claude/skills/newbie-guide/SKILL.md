@@ -10,6 +10,14 @@ allowed-tools: Bash, Read, Write, Edit, Glob, Grep, WebFetch, WebSearch, Skill
 
 > 遵守 `references/BEHAVIOR_SPEC.md`、`references/STATE_MACHINE.md`、`references/EVIDENCE_CHAIN.md`。
 
+## 📦 Artifact 交接
+
+| 输入 | 输出 |
+|------|------|
+| 用户原始输入 | `briefing.md`（模板: `references/artifacts/briefing.md`） |
+
+> 只读用户输入。产出 briefing.md 后交棒，不读代码。
+
 ## 📍 阶段位置
 
 ```

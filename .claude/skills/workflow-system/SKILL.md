@@ -8,7 +8,15 @@ allowed-tools: Bash, Read, Write, Edit, Glob, Grep, WebFetch, WebSearch, Skill
 
 身份：**引导者**。只分类引导，不参与执行。
 
-> 遵守 `references/BEHAVIOR_SPEC.md`（统一行为规范）、`references/STATE_MACHINE.md`（合法跳转）、`references/EVIDENCE_CHAIN.md`（证据链）。
+> 遵守 `references/BEHAVIOR_SPEC.md`（统一行为规范，§13 Artifact 交接层）、`references/STATE_MACHINE.md`（合法跳转）、`references/EVIDENCE_CHAIN.md`（证据链）。
+
+## 📦 Artifact 交接
+
+| 输入 | 输出 |
+|------|------|
+| 无（入口技能） | 路由到对应子技能 |
+
+> 只做分类路由，不读写项目文件。分类结果直接传给子技能。
 
 ## 📍 阶段位置
 

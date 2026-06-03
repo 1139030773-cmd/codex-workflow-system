@@ -10,6 +10,14 @@ allowed-tools: Bash, Read, Glob, Grep
 
 > 遵守 `references/BEHAVIOR_SPEC.md`、`references/STATE_MACHINE.md`、`references/EVIDENCE_CHAIN.md`。
 
+## 📦 Artifact 交接
+
+| 输入 | 输出 |
+|------|------|
+| `plan.md` + `patch.md`（或 `lesson.md`） | `audit.md`（模板: `references/artifacts/audit.md`） |
+
+> 只读上层 Artifact + BEHAVIOR_SPEC.md + patch 中涉及的文件。不重新扫描整个项目。
+
 ## 📍 阶段位置
 
 ```
