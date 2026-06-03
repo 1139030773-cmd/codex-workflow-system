@@ -105,6 +105,43 @@ cp -r agent-workflow-system/.claude/skills/ 你的项目/.claude/skills/
 
 ---
 
+## 自动更新
+
+### Claude Code
+
+启用后每次启动自动检查更新，无需手动 `git pull`：
+
+**1. 配置 SessionStart hook：**
+
+在项目 `.claude/settings.json` 中添加：
+
+```json
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "",
+        "command": "bash ~/.claude/plugins/marketplaces/agent-workflow-system/hooks/session-start.sh"
+      }
+    ]
+  }
+}
+```
+
+**2. 或者全局生效**（所有项目自动更新），在 `~/.claude/settings.json` 中配置同上。
+
+### Codex
+
+Codex 暂不支持插件自动更新通知。推荐安装第三方工具：
+
+```bash
+npm i -g ai-tool-updater
+```
+
+安装后会自动监测 Claude Code、Codex 等 AI 工具的更新并通过系统通知提醒。
+
+---
+
 ## 许可证
 
 MIT
