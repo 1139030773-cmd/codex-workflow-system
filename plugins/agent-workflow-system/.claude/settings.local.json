@@ -7,7 +7,11 @@
       "PowerShell(Join-Path *)",
       "PowerShell(Test-Path *)",
       "PowerShell(Get-Date *)",
-      "PowerShell(Write-Output *)"
+      "PowerShell(Write-Output *)",
+      "PowerShell(Start-Job *)",
+      "PowerShell(Wait-Job *)",
+      "PowerShell(Stop-Job *)",
+      "PowerShell(Remove-Job *)"
     ]
   },
   "hooks": {
@@ -35,6 +39,11 @@
           {
             "type": "command",
             "command": "bash .claude/hooks/session-start.sh",
+            "timeout": 10
+          },
+          {
+            "type": "command",
+            "command": "powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -File .claude/hooks/session-start.ps1",
             "timeout": 10
           }
         ]
