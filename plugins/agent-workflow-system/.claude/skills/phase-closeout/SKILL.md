@@ -65,6 +65,7 @@ allowed-tools: Bash, Read, Write, Edit, Glob, Grep
 - [ ] 满足 Release 触发条件？→ 若满足，必须打 tag + 写 Release notes
 - [ ] README 反映最新能力？
 - [ ] 双平台都能搜到并安装？
+- [ ] 社区市场已同步？（awesome-codex-plugins + n-skills）
 
 **缺一条 = 没发布完。** 全部通过后才进入第 7 步。
 
