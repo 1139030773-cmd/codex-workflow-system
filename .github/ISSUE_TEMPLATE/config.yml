@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 💬 使用讨论
+    url: https://github.com/1139030773-cmd/agent-workflow-system/discussions
+    about: 使用问题、经验分享、想法建议请发到 Discussions
+  - name: 📖 项目文档
+    url: https://github.com/1139030773-cmd/agent-workflow-system/blob/main/README.md
+    about: 先看 README，了解系统架构和使用方式
