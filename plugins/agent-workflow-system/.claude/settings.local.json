@@ -28,6 +28,11 @@
             "type": "command",
             "command": "powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -File .claude/hooks/session-end.ps1",
             "timeout": 15
+          },
+          {
+            "type": "command",
+            "command": "powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -File .claude/hooks/dev-push.ps1",
+            "timeout": 15
           }
         ]
       }
