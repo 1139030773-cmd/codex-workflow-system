@@ -53,6 +53,22 @@
 
 **违反信号**: 用户同时面对两个话题 = 你犯规了。
 
+## 系统改动铁律
+
+**只要改了 temp-desc 里的系统文件，以下 5 步必须一口气做完，不等用户催：**
+
+| # | 步骤 | 说明 |
+|---|------|------|
+| 1 | **三目录同步** | 根目录 → `plugins/agent-workflow-system/` → `c:\Users\11390\Documents\New project\` |
+| 2 | **CHANGELOG** | 在对应版本条目下记录改动（Added/Changed/Fixed） |
+| 3 | **README** | 如果改动影响功能描述，同步更新核心特性/版本表 |
+| 4 | **版本号** | 如果是新功能/breaking change，同步更新 `plugin.json` + `marketplace.json` 版本 |
+| 5 | **commit + push** | 最后一步提交推送，消息格式：`type: 中文描述`（type = feat/fix/docs/chore/release） |
+
+**违反信号**: 用户问"README 更新了吗"、"CHANGELOG 补了吗"、"推送了吗" = 你漏步骤了。
+
+**自动化原则**: 同一件事用户让我做超过 3 次 → 把它写成规则或脚本，下次自动执行，不再让用户提醒。
+
 ## 上下文健康
 
 - 用户说"慢/卡/等好久" → 建议收尾开新窗口
