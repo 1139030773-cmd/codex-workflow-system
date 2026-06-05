@@ -13,8 +13,22 @@
 - **CLAUDE.md** — 每次新会话启动时自动检测未完成任务 + 单线程原则
 - **RESUME.md** + **context_snapshot** — checkpoint + 用户偏好/决策记录/防犯错指南，新窗口 AI 不再"失忆"
 - **四选项恢复 UI** — 继续 / 暂缓 / 放弃 / 新项目，精准区分场景
-- **SessionEnd Hook** — 关窗口时自动写入恢复点（Windows/Linux/Mac）
+- **⏱️ 时间间隔感知** — 根据距离上次会话的时间（小时/天/周）自动调整恢复策略，间隔越长越先确认再动手
+- **SessionEnd Hook** — 关窗口时自动写入恢复点 + 自动 commit/push 系统更新
+- **SessionStart Hook** — 每次启动自动 `git pull` 拉取最新版本（24h 节流）
 - **跨平台支持** — PowerShell + Bash 双实现
+
+### 🔁 全自动更新链路
+
+**开发者改完关窗口 → 自动推送 GitHub → 用户开窗口自动拉取。零人工干预。**
+
+```
+你改系统 → 关窗口 → hook 自动 commit + push
+                              ↓
+                         GitHub 更新
+                              ↓
+              用户开窗口 → hook 自动 pull（24h 一次）
+```
 
 ### 🧠 7 个协作技能
 
