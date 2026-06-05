@@ -14,10 +14,18 @@
 - 🔧 CLAUDE.md 恢复流程新增 5 条恢复戒律
 - 🔧 session-recovery.md memory 文件新增 context_snapshot 读取规则
 
-### Added (同版本后续补充)
+## [1.6.1] - 2026-06-05
+
+### Added
 - ⏱️ **时间间隔感知** — 根据 last_session_end 计算间隔（小时/天/周），越久越先确认再动手
 - 🔁 **全自动更新链路** — SessionEnd 自动 commit + push，SessionStart 自动 pull（24h 节流）
 - 🔁 dev-push.ps1 / dev-push.sh — 开发者关窗口时自动推送系统改动到 GitHub
+- 📋 **系统改动铁律** — CLAUDE.md 硬约束：改系统文件必须 5 步一口做完（同步→CHANGELOG→README→版本号→推送）
+- 🚀 快速开始简化 — 零终端命令，聊天一句安装
+
+### Changed
+- 🔧 CLAUDE.md 新增时间间隔感知 + 系统改动铁律 + 自动化原则
+- 🔧 README 新增自动更新链路说明 + 核心特性更新
 - 🔧 双平台同步：CLAUDE.md ×2、phase-closeout SKILL.md ×2 全部更新
 
 ### Fixed
