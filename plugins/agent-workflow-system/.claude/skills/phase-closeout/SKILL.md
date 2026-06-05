@@ -76,7 +76,13 @@ allowed-tools: Bash, Read, Write, Edit, Glob, Grep
 - `TASK_QUEUE.md`：移动已完成 → 设新任务
 - `DECISIONS.md`：汇总证据链 + 新决策
 - `PROJECT.md`：更新目标、阶段、冻结区域
-- `RESUME.md`：设置 status: inactive（阶段结束，无需恢复），更新 completed 列表
+- `RESUME.md`：更新 status、completed、next_step，**必须填写 context_snapshot**
+  - `decisions`: 本轮做了什么决策 + 为什么
+  - `eliminated`: 排除了哪些方案 + 原因
+  - `user_style`: 用户交流偏好（简短/详细、自主/跟从）
+  - `landmarks`: 对话关键节点
+  - `footguns`: 下个窗口最容易犯的错（明确列出不要做什么）
+- **context_snapshot 不可省略。** 这是下一窗口 AI 恢复"记忆"的唯一来源。只填状态=新窗口 AI 不认识用户。
 
 ### 8. 生成新对话口令
 

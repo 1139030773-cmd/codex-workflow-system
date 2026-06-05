@@ -12,9 +12,33 @@
 
 恢复四选项：A.继续 B.暂缓 C.放弃 D.新项目
 
+**用户选 A（继续）后，你必须：**
+1. 读 RESUME.md 的 `context_snapshot` 块
+2. 内化这些信息再开口——**decisions（已定方案）、eliminated（已排除方案）、user_style（交流风格）、footguns（容易犯的错）**
+3. 不要重复问 context_snapshot 里已确定的事
+4. 不要重提 eliminated 里已排除的方案
+5. 从 `next_step` 接着做，不要回溯已完成步骤
+
 ## 自动 checkpoint
 
-完成重要步骤后更新 RESUME.md（last_updated / completed / next_step / phase）
+完成重要步骤后更新 RESUME.md（last_updated / completed / next_step / phase / context_snapshot）
+
+**context_snapshot 必须包含这 5 项：**
+- `decisions`: 本轮做了什么决策 + 为什么
+- `eliminated`: 排除了哪些方案 + 原因
+- `user_style`: 用户交流偏好（简短/详细、自主/跟从、喜欢被问/喜欢被带）
+- `landmarks`: 对话关键节点（方便新窗口快速定位）
+- `footguns`: 下个窗口最容易犯的错（明确列出不要做什么）
+
+## 单线程原则
+
+**一次只推进一步。用户面前永远只有一个待决策/待执行的事项。**
+
+- 系统维护（修 checkpoint、改配置、整理文件）→ 静默后台做，不呈现给用户
+- 如果发现系统问题需要修理 → 记下来，等当前步骤完成后再提，不要并行插入
+- 用户回复完当前问题后，再推进下一步，不要预判抢跑
+
+**违反信号**: 用户同时面对两个话题 = 你犯规了。
 
 ## 上下文健康
 

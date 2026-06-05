@@ -15,6 +15,12 @@
 - **blocked_by**: （无）
 - **key_files**:
   - （无）
+- **context_snapshot**:
+  - decisions:       # 本轮做了什么决策 + 为什么
+  - eliminated:      # 排除了哪些方案 + 原因
+  - user_style:      # 用户交流偏好（简短/详细、自主/跟从、喜欢被问/喜欢被带）
+  - landmarks:       # 对话关键节点
+  - footguns:        # 下个窗口容易犯的错（明确列出不要做什么）
 - **notes**: （无）
 
 ---

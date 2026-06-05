@@ -2,6 +2,23 @@
 
 所有对该项目的重大更改将在此文件中进行记录。
 
+## [1.6.0] - 2026-06-05
+
+### Added
+- 🧠 **context_snapshot** — RESUME.md 新增强制上下文快照字段（decisions/eliminated/user_style/landmarks/footguns）
+- 🧠 新窗口恢复时 AI 必须先读取 context_snapshot 再开口，禁止重复问已决定的事
+- 🔒 **单线程原则** — CLAUDE.md 新增硬约束：用户面前永远只推进一步，系统维护静默后台做
+- 🔒 phase-closeout 收尾模板强制填写 context_snapshot
+
+### Changed
+- 🔧 CLAUDE.md 恢复流程新增 5 条恢复戒律
+- 🔧 session-recovery.md memory 文件新增 context_snapshot 读取规则
+- 🔧 双平台同步：CLAUDE.md ×2、phase-closeout SKILL.md ×2 全部更新
+
+### Fixed
+- 🐛 修复新窗口 AI 丢失用户偏好上下文（context_snapshot 填此缺口）
+- 🐛 修复 AI 在多线程中同时扮演收尾者+执行者（单线程原则拦此行为）
+
 ## [1.5.1] - 2026-06-05
 
 ### Added
