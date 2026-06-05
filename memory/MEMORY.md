@@ -1,2 +1,4 @@
 - [会话恢复流程](session-recovery.md) — 新会话启动时检测并恢复未完成任务
 - [活跃任务追踪](active-task.md) — 当前进行中任务的状态
+- [实操验证优先](verify-by-doing.md) — 验证时直接实操，禁止纯搜索推测
+- [回复语气规范](response-tone.md) — 耐心、平等、解释到位，禁止强势甩结论
