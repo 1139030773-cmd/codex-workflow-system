@@ -52,6 +52,10 @@
 - **Artifact 交接层** — 50k 上下文 → 5k Artifact，轻量技能间传递
 - **会话恢复** — 跨会话任务连续性（第 14 章）
 
+**CLAUDE.md 硬约束（v1.6.2 新增）：**
+- **实操验证优先** — 验证必须直接执行命令/接口，禁止纯搜索文档推测
+- **回复语气规范** — 禁止简短否定甩结论、反问句、居高临下语气
+
 ---
 
 ## 🚀 快速开始
@@ -81,10 +85,11 @@ cp -r agent-workflow-system/.claude ./  && cp agent-workflow-system/CLAUDE.md . 
 ```bash
 codex plugin marketplace add https://github.com/hashgraph-online/awesome-codex-plugins.git
 ```
-
 然后在 Codex 聊天里输入 `/plugins`，在列表中找到 **Agent Workflow System** 安装。
 
-> 💡 插件即将通过 [awesome-codex-plugins](https://github.com/hashgraph-online/awesome-codex-plugins) 市场分发（[PR #184](https://github.com/hashgraph-online/awesome-codex-plugins/pull/184) 审核中）。
+> 💡 插件已提交 [awesome-codex-plugins](https://github.com/hashgraph-online/awesome-codex-plugins) 市场（[PR #184](https://github.com/hashgraph-online/awesome-codex-plugins/pull/184) 审核中）。合并后即可通过上述方式安装。
+
+Codex 会自动识别仓库、安装插件。
 
 ---
 
@@ -170,6 +175,8 @@ codex plugin marketplace add https://github.com/hashgraph-online/awesome-codex-p
 
 | 版本 | 日期 | 主要变更 |
 |------|------|----------|
+| **1.6.2** | 2026-06-05 | 🔍 实操验证优先 + 🗣️ 回复语气规范 |
+| **1.6.1** | 2026-06-05 | ⏱️ 时间间隔感知 + 📋 系统改动铁律 + 🔁 全自动更新链路 |
 | **1.6.0** | 2026-06-05 | 🧠 context_snapshot 记忆快照 + 单线程原则 |
 | **1.5.0** | 2026-06-05 | 🔄 会话恢复机制、跨平台 hooks、README |
 | 1.4.1 | 2026-06-04 | 发布管线 + 社区市场同步 |
