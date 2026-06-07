@@ -1,6 +1,0 @@
-- [会话恢复流程](session-recovery.md) — 新会话启动时检测并恢复未完成任务
-- [活跃任务追踪](active-task.md) — 当前进行中任务的状态
-- [实操验证优先](verify-by-doing.md) — 验证时直接实操，禁止纯搜索推测
-- [回复语气规范](response-tone.md) — 耐心、平等、解释到位，禁止强势甩结论
-- [严谨性铁律](no-skip-verification.md) — 检查类步骤必须先读内容再下结论，禁止凭感觉跳过
-- [步骤提醒格式](step-reminder-format.md) — 推进下一步必须带完整背景，禁止简短几个字
