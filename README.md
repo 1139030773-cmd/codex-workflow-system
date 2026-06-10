@@ -89,17 +89,28 @@ cp -r agent-workflow-system/.claude ./  && cp agent-workflow-system/CLAUDE.md . 
 
 ### Codex
 
-**加入市场源（一次）：**
+**方式一：直接安装（推荐）**
 
 在终端执行：
 ```bash
+codex plugin install 1139030773-cmd/agent-workflow-system
+```
+
+**方式二：桌面版 Setting 手动添加**
+
+Settings → Plugins → 搜索框右边菜单 → Install from URL → 输入：
+```
+https://raw.githubusercontent.com/1139030773-cmd/agent-workflow-system/main/plugins/agent-workflow-system/.codex-plugin/plugin.json
+```
+
+**方式三：通过市场源安装**
+
+```bash
 codex plugin marketplace add https://github.com/hashgraph-online/awesome-codex-plugins.git
 ```
-然后在 Codex 聊天里输入 `/plugins`，在列表中找到 **Agent Workflow System** 安装。
+然后在聊天框输入 `/plugins`，在列表中找到 **Agent Workflow System** 安装。
 
-> 💡 插件已提交 [awesome-codex-plugins](https://github.com/hashgraph-online/awesome-codex-plugins) 市场（[PR #202](https://github.com/hashgraph-online/awesome-codex-plugins/pull/202) 审核中）。合并后即可通过上述方式安装。
-
-Codex 会自动识别仓库、安装插件。
+> 💡 市场安装依赖 [PR #202](https://github.com/hashgraph-online/awesome-codex-plugins/pull/202) 合入。审核期间请用方式一或方式二直接安装，效果一样。
 
 ### 推荐启动语
 
