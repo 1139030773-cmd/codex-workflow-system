@@ -51,6 +51,8 @@
 - **法律觉察** — 三层法律风险提示，不越界判断
 - **Artifact 交接层** — 50k 上下文 → 5k Artifact，轻量技能间传递
 - **会话恢复** — 跨会话任务连续性（第 14 章）
+- **任务分叉与收敛** — 子任务锚定父任务场景，完成自动回归
+- **四问自检** — 改动落地前先过逻辑/冲突/重要性/时机四关
 
 **CLAUDE.md 规则体系（v1.6.2 ~ v1.7.5）：**
 - **实操验证优先** — 验证必须直接执行命令/接口，禁止纯搜索文档推测
@@ -59,6 +61,10 @@
 - **CLAUDE.md 拆分** — 根目录放开发规则，插件目录放用户规则，各司其职
 - **会话收尾提示** — 用户表达离开意图时主动提醒收尾，避免上下文丢失
 - **话题层面标定** — 话题漂移时用自然语言帮用户回顾做了什么、现在在哪，不贴标签，宏观自适应
+- **四问自检** — 讨论得出改动结论后、动手改之前，先过四问：逻辑成立？冲突？重要？该做？
+- **任务注册铁律** — 新任务开始前必须在 task_stack 注册，不注册不干活
+- **任务分叉与收敛** — 子任务锚定父任务场景，收尾时自动提示回归主线
+- **回任务格式铁律** — 漂移后回到任务层面必须用固定格式：目标/进度/下一步，缺一不可
 
 ---
 
@@ -91,7 +97,7 @@ codex plugin marketplace add https://github.com/hashgraph-online/awesome-codex-p
 ```
 然后在 Codex 聊天里输入 `/plugins`，在列表中找到 **Agent Workflow System** 安装。
 
-> 💡 插件已提交 [awesome-codex-plugins](https://github.com/hashgraph-online/awesome-codex-plugins) 市场（[PR #184](https://github.com/hashgraph-online/awesome-codex-plugins/pull/184) 审核中）。合并后即可通过上述方式安装。
+> 💡 插件已提交 [awesome-codex-plugins](https://github.com/hashgraph-online/awesome-codex-plugins) 市场（[PR #202](https://github.com/hashgraph-online/awesome-codex-plugins/pull/202) 审核中）。合并后即可通过上述方式安装。
 
 Codex 会自动识别仓库、安装插件。
 
