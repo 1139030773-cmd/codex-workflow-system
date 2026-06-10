@@ -34,6 +34,7 @@ allowed-tools: Bash, Read, Write, Edit, Glob, Grep, WebFetch, WebSearch, Skill
 3. 偏离计数器归零
 4. **恢复感知**（若为恢复会话）：若 RESUME.md 显示有未完成任务，先询问用户是否恢复而非重新引导
 5. **漂移回归感知**（若对话中途讨论偏离主线后回归主任务）：回归时先复述当前步骤背景（正在做什么、已完成什么、下一步是什么），再推进。信息量比完整恢复少，但必须包含"当前在哪一步"和"接下来要做什么"
+6. **🌐 语言自适应**：检测用户提问的语言，用相同语言回应。中文提问 → 中文引导；English question → English guidance。混合语言时跟随最后一句的语言
 
 ## 第一步：判断任务类型
 
@@ -51,14 +52,14 @@ allowed-tools: Bash, Read, Write, Edit, Glob, Grep, WebFetch, WebSearch, Skill
 
 判断任务类型后，用追问挖掘深层需求。每次只问 1 个，等回答后再继续，最多 5 轮：
 
-| 追问类型 | 问法 |
-|----------|------|
-| **第一性追问** | "做这个是为了什么？目标背后想解决的根本问题是什么？" |
-| **目标追问** | "如果这个做完了，看起来会是什么样子？" |
-| **约束追问** | "有什么条件不能动？/ 必须什么时候完成？" |
-| **动机追问** | "为什么想做这个？解决了什么问题？" |
-| **经验追问** | "之前试过什么？结果如何？" |
-| **边界追问** | "哪些明确不做？/ 成功标准是什么？" |
+| 追问类型 | 中文问法 | English |
+|----------|------|------|
+| **第一性追问** | "做这个是为了什么？目标背后想解决的根本问题是什么？" | "What's the fundamental problem you're trying to solve?" |
+| **目标追问** | "如果这个做完了，看起来会是什么样子？" | "What does 'done' look like for this?" |
+| **约束追问** | "有什么条件不能动？/ 必须什么时候完成？" | "Any constraints? Deadlines? Things that can't change?" |
+| **动机追问** | "为什么想做这个？解决了什么问题？" | "Why do you want to do this? What problem does it solve?" |
+| **经验追问** | "之前试过什么？结果如何？" | "What have you tried before? How did it go?" |
+| **边界追问** | "哪些明确不做？/ 成功标准是什么？" | "What's explicitly out of scope? How will you know it worked?" |
 
 追问原则：
 - 一次只问 1 个问题，等用户回答才继续
