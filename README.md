@@ -55,7 +55,7 @@ You change system → Close window → Hook auto commit + push
 - **Four-question self-check** — Before every change: logical? conflicts? important? right timing?
 - **Time-scale awareness** — Tasks track created/last-active timestamps; stale decisions flagged for re-confirmation
 
-**CLAUDE.md Rules (v1.6.2 ~ v1.7.7):**
+**CLAUDE.md Rules (v1.6.2 ~ v1.8.0):**
 - **Verify by doing** — Run commands, don't guess from docs
 - **Tone standards** — Patient, equal, explain everything; no dismissive one-liners
 - **Task closeout rule** — Never close a task without user confirmation
