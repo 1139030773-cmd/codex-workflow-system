@@ -24,9 +24,24 @@
 - **SessionStart Hook** — 每次启动自动 `git pull` 拉取最新版本（24h 节流）
 - **跨平台支持** — PowerShell + Bash 双实现
 
-### 🔁 全自动更新链路
+### 🔧 安装配置（2 分钟）
 
-**开发者改完关窗口 → 自动推送 GitHub → 用户开窗口自动拉取。零人工干预。**
+**第一步：启用 hook** — 在 `.claude/settings.local.json` 添加：
+
+```json
+{
+  "hooks": {
+    "SessionStart": [{"hooks": [{"type": "command", "command": "powershell.exe -File .claude/hooks/session-start.ps1", "timeout": 10}]}],
+    "SessionEnd": [{"hooks": [{"type": "command", "command": "powershell.exe -File .claude/hooks/session-end.ps1", "timeout": 15}]}]
+  }
+}
+```
+
+Hook 脚本在 `hooks/` 目录（复制到 `.claude/hooks/`），提供 `.ps1` 和 `.sh` 双版本。
+
+**第二步：健康检查** — `scripts/health-check.ps1 check` 扫描系统完整性。
+
+### 🔁 全自动更新链路
 
 ```
 你改系统 → 关窗口 → hook 自动 commit + push
@@ -61,7 +76,7 @@
 - **任务分叉与收敛** — 子任务锚定父任务场景，完成自动回归
 - **四问自检** — 改动落地前先过逻辑/冲突/重要性/时机四关
 
-**CLAUDE.md 规则体系（v1.6.2 ~ v1.10.1）：**
+**CLAUDE.md 规则体系（v1.6.2 ~ v1.10.2）：**
 - **实操验证优先** — 验证必须直接执行命令/接口，禁止纯搜索文档推测
 - **回复语气规范** — 禁止简短否定甩结论、反问句、居高临下语气
 - **任务收尾铁律** — 关闭/归档任务前必须向用户确认，AI 禁止自作主张判任务结束
@@ -218,6 +233,7 @@ codex plugin marketplace add https://github.com/hashgraph-online/awesome-codex-p
 
 | 版本 | 日期 | 主要变更 |
 |------|------|----------|
+| **1.10.2** | 2026-06-11 | 📦 完整分发——脚本 + hooks 随插件打包 |
 | **1.10.1** | 2026-06-11 | 🔧 phase-closeout 区分暂停/归档 |
 | **1.10.0** | 2026-06-11 | 📦 一键项目归档——INDEX.md + 自然语言触发 |
 | **1.9.2** | 2026-06-11 | 🔁 输出自检第4问 + 阶段切换自动审计 |

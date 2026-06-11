@@ -37,7 +37,20 @@
 
 文件路径：`.resume/session-YYYYMMDD-HHmmss.md`（时间戳 = 收尾时刻）
 
-每个文件结构与根目录 RESUME.md 一致，额外包含 `session_id` 字段。
+每个文件结构与根目录 RESUME.md 一致，额外包含 `session_id` 字段：
+```
+- session_id: session-YYYYMMDD-HHmmss
+- status: active | paused | completed
+- task_name: ...
+- phase: ...
+- last_updated: ...
+- completed: ...
+- next_step: ...
+- blocked_by: ...
+- task_stack: ...
+- context_snapshot: ...
+- last_session_end: ...
+```
 
 ### 收尾写文件规则
 
@@ -45,11 +58,7 @@
 1. `.resume/{session-id}.md` — 该窗口专属 checkpoint（主）
 2. 根目录 `RESUME.md` — 向后兼容 fallback（副，只保留最新一个任务的信息）
 
-## 系统健康度检查
-
-**每次会话启动时，静默运行 `.\health-check.ps1 check`。** 全部健康（≥90%）→ 沉默。有问题（<90%）→ 第一轮回复末尾报告。
-
-检测范围：RESUME、session 文件、TASK_QUEUE、task_stack、DECISIONS、Skill 组件、膨胀检测。`clean` 模式自动归档旧数据到 `archive/`。
+同一任务多次收尾用不同 session ID → 自然产生多个文件 → "继续"时按 task_name 去重，只展示每条任务的最新文件。 |
 
 ## 版本更新检查
 
@@ -60,10 +69,16 @@
 如果存在 → 提醒用户。不存在 → 版本一致，沉默。
 无需手动 WebFetch。
 
-关键规则：
-- 只提一次，用户忽略不反复提醒
-- 不打断恢复流程或当前任务
-- 版本一致时完全沉默
+## 系统健康度检查
+
+**每次会话启动时，静默运行 `scripts/health-check.ps1 check`（或 `.sh`）。**
+
+全部健康（≥90%）→ 沉默，不打扰用户。
+有问题（<90%）→ 在第一轮回复末尾附加报告。
+
+检测范围：RESUME 完整性、session 文件字段、TASK_QUEUE 损坏/孤儿引用、task_stack 孤儿任务、DECISIONS 完整性、Skill 组件、膨胀检测。
+
+同脚本 `clean` 模式：自动归档旧 session 文件、旧 completed 条目、标记旧 decisions。只归档不删除。
 
 ## 系统改动铁律
 
@@ -77,7 +92,7 @@
 | 4 | **RESUME.md + .resume/** | 如果改动涉及任务状态变更，同步更新 `.resume/{session-id}.md` + 根目录 RESUME.md（last_updated / completed / next_step / phase） |
 | 5 | **版本号** | 如果是新功能/breaking change，同步更新 `plugin.json` + `marketplace.json` 版本，**版本号必须与步骤 2 的 CHANGELOG 一致** |
 | 6 | **commit + push** | 在 `plugins/` 仓库提交推送；新功能/breaking change 需打版本 tag |
-| 7 | **版本一致性验证** | 运行 `.\validate-version.ps1`，通过（显示 ✅）才算完成。不通过 → 回去补步骤 2 或 5，不准跳过 |
+| 7 | **版本一致性验证** | 运行 `scripts/validate-version.ps1`（或 `.sh`），通过才算完成。不通过 → 回去补步骤 2 或 5，不准跳过 |
 
 > **步骤 2 和 5 互相交叉引用**：改 CHANGELOG 时想着 plugin.json，改 plugin.json 时想着 CHANGELOG。两个版本号互为锚点，忘了一个会自相矛盾。
 
@@ -114,27 +129,19 @@
 
 ## 📦 归档（自然语言触发）
 
-用户说"我之前做的xxx还在吗""还有哪些做完的项目""看看归档"→ 读 `archive/INDEX.md`。用户说"归档项目"→ phase-closeout 归档模式。
+用户说"我之前做的xxx还在吗""还有哪些做完的项目""看看归档"→ 读 `archive/INDEX.md` 回答。用户说"归档项目"→ 触发 phase-closeout 归档模式。
 
 ## 🌐 语言自适应
 
 **用户用什么语言提问，就用什么语言回应。** 中文 → 中文；English → English。不预设语言偏好，不强制切换。
 
-## 话题层面标定（必须执行）
+## 话题层面标定
 
-**话题自然漂移时，用一句话帮用户回顾做了什么、现在站在哪。不贴标签，说人话。此规则不可跳过。**
+**话题自然漂移时，用一句话帮用户回顾做了什么、现在站在哪。不贴标签，说人话。**
 
 ### 层面识别（内部自适应，不展示固定分类给用户）
 
-不对话题做固定分类。从宏观上判断当前在聊什么范畴——是推进项目、调整系统（工作流）、开发自动化、技术操作，还是情绪/状态/探索——然后自然描述，不套模板、不细化到具体动作。
-
-### 什么时候说
-
-| 时机 | 行为 |
-|------|------|
-| 话题切换 | **强制执行** — 一句话收尾旧话题 + 定位当前 |
-| 层面误判 | **强制执行** — 立即纠正，撤销误操作 |
-| 回到任务 | **强制格式** — 🎯目标/📍进度/⚠️下一步 |
+不对话题做固定分类。从宏观上判断当前在聊什么范畴——是推进项目、调整系统、技术操作，还是情绪/状态/探索——然后自然描述，不套模板、不细化到具体动作。
 
 ### 什么时候说
 
