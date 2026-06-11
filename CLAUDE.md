@@ -46,18 +46,12 @@
 
 ## 版本更新检查
 
-**每次会话启动时，静默检查远程 plugin.json 版本号。如果高于本地，在第一轮回复末尾提醒用户，不影响正常流程。**
+**SessionStart hook 已自动检查远程版本号并写入 `.claude/.version-check`。第一轮回复时读这个文件即可。**
 
-检查方式：
-```
-读取本地 plugins/agent-workflow-system/.codex-plugin/plugin.json 的 version 字段
-对比远程 https://raw.githubusercontent.com/1139030773-cmd/agent-workflow-system/main/plugins/agent-workflow-system/.codex-plugin/plugin.json
-```
+文件格式：`newer|远程版本|本地版本`（只有远程 > 本地时才存在）
 
-提醒格式（放在回复最后，一句话，不用大段）：
-```
-💡 发现新版本 v1.x.x（当前 v1.x.x），说"升级"我帮你更新。
-```
+如果存在 → 提醒用户。不存在 → 版本一致，沉默。
+无需手动 WebFetch。
 
 关键规则：
 - 只提一次，用户忽略不反复提醒
