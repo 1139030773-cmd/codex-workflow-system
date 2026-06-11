@@ -61,7 +61,7 @@ You change system → Close window → Hook auto commit + push
 - **Four-question self-check** — Before every change: logical? conflicts? important? right timing?
 - **Time-scale awareness** — Tasks track created/last-active timestamps; stale decisions flagged for re-confirmation
 
-**CLAUDE.md Rules (v1.6.2 ~ v1.9.0):**
+**CLAUDE.md Rules (v1.6.2 ~ v1.9.1):**
 - **Verify by doing** — Run commands, don't guess from docs
 - **Tone standards** — Patient, equal, explain everything; no dismissive one-liners
 - **Task closeout rule** — Never close a task without user confirmation
@@ -137,6 +137,7 @@ After installation, try one of these:
 
 | Version | Date | Highlights |
 |---------|------|-----------|
+| **1.9.1** | 2026-06-11 | Project dashboard — health_score + active_tasks in RESUME.md |
 | **1.9.0** | 2026-06-11 | Beginner mode — newbie entry + jargon filter + beginner channel |
 | **1.8.2** | 2026-06-11 | Output self-check + write-level gate — prevent dev content leaking into workflow |
 | **1.8.1** | 2026-06-11 | System health check + auto-cleanup — integrity scan on every session start |
