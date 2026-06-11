@@ -38,6 +38,12 @@
 1. `.resume/{session-id}.md` — 该窗口专属 checkpoint（主）
 2. 根目录 `RESUME.md` — 向后兼容 fallback（副，只保留最新一个任务的信息）
 
+## 系统健康度检查
+
+**每次会话启动时，静默运行 `.\health-check.ps1 check`。** 全部健康（≥90%）→ 沉默。有问题（<90%）→ 第一轮回复末尾报告。
+
+检测范围：RESUME、session 文件、TASK_QUEUE、task_stack、DECISIONS、Skill 组件、膨胀检测。`clean` 模式自动归档旧数据到 `archive/`。
+
 ## 版本更新检查
 
 **每次会话启动时，静默检查远程 plugin.json 版本号。如果高于本地，在第一轮回复末尾提醒用户，不影响正常流程。**

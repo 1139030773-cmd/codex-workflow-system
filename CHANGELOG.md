@@ -2,6 +2,16 @@
 
 所有对该项目的重大更改将在此文件中进行记录。
 
+## [1.8.1] - 2026-06-11
+
+### Added
+- 🩺 **系统健康度检查** — `health-check.ps1` 启动时自动检测 RESUME/session/TASK_QUEUE/task_stack/DECISIONS/Skill 完整性
+- 🧹 **系统清理归档** — `clean` 模式自动归档旧 session、旧 completed、标记 stale decisions
+- 📁 `archive/` 目录 — 归档区，只移不删
+
+### Changed
+- 🔧 **CLAUDE.md 启动流程** — 新增第 2 步：版本检查 → 健康度 → 恢复
+
 ## [1.8.0] - 2026-06-11
 
 ### Added

@@ -55,7 +55,7 @@ You change system → Close window → Hook auto commit + push
 - **Four-question self-check** — Before every change: logical? conflicts? important? right timing?
 - **Time-scale awareness** — Tasks track created/last-active timestamps; stale decisions flagged for re-confirmation
 
-**CLAUDE.md Rules (v1.6.2 ~ v1.8.0):**
+**CLAUDE.md Rules (v1.6.2 ~ v1.8.1):**
 - **Verify by doing** — Run commands, don't guess from docs
 - **Tone standards** — Patient, equal, explain everything; no dismissive one-liners
 - **Task closeout rule** — Never close a task without user confirmation
@@ -131,6 +131,7 @@ After installation, try one of these:
 
 | Version | Date | Highlights |
 |---------|------|-----------|
+| **1.8.1** | 2026-06-11 | System health check + auto-cleanup — integrity scan on every session start |
 | **1.8.0** | 2026-06-11 | Multi-window session management — .resume/ per-window files prevent conflicts |
 | **1.7.7** | 2026-06-10 | Time-scale awareness — task timestamps + decision expiry + idle detection |
 | **1.7.6** | 2026-06-10 | English adaptation — bilingual README + language auto-detect + starter prompts |
