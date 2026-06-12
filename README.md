@@ -77,7 +77,7 @@ You change system → Close window → Hook auto commit + push
 
 ### 📜 Behavioral Constitution
 
-14-chapter unified behavioral standard governing all skills:
+15-chapter unified behavioral standard governing all skills:
 
 - **Role isolation** — Planners don't code, executors don't make architectural decisions
 - **Five-level error correction** — From self-check to mandatory human intervention
