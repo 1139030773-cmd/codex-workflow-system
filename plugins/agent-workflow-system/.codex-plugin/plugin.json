@@ -1,6 +1,6 @@
 {
   "name": "agent-workflow-system",
-  "version": "1.11.1",
+  "version": "1.12.0",
   "description": "一套面向新手的 Codex 工作流系统，用于项目总控、学习引导、调试修复、漂移审计和阶段收尾。A beginner-friendly Codex workflow system with 7 collaborative skills for project management, learning, debugging, drift detection, and phase closeout. Bilingual (CN/EN).",
   "author": {
     "name": "Codex 工作流系统"
