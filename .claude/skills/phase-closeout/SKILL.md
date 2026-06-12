@@ -72,7 +72,7 @@ allowed-tools: Bash, Read, Write, Edit, Glob, Grep
 
 ### 7. 更新真相源
 
-- `STATE_SNAPSHOT.md`：状态 + 已完成 + 问题 + 下一步
+- **`STATE_SNAPSHOT.md`**：对照旧版本逐字段确认后再改，**禁止凭空重写**。特别是 `active_tasks` 列表——旧版本有的条目不能丢，只能增/改状态/删已完成。
 - `TASK_QUEUE.md`：移动已完成 → 设新任务
 - `DECISIONS.md`：汇总证据链 + 新决策
 - `PROJECT.md`：更新目标、阶段、冻结区域
